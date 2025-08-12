@@ -5,4 +5,4 @@ export const printObjetc = (argument:any) => {
 
 export function genericFunction(argument: any): any {
     return argument;
-}
+} 
