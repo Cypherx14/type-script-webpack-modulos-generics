@@ -25,19 +25,25 @@ import { printObjetc, genericFunction, genericFunctionArrow} from "./generics/ge
 
 //manejando genericos
 
-printObjetc('Hola Mundo!');
-printObjetc(123);
-printObjetc([1, 2, 3, 4, 5]);
-printObjetc({ name: 'Ironman', power: 6, age: 45 });
+// printObjetc('Hola Mundo!');
+// printObjetc(123);
+// printObjetc([1, 2, 3, 4, 5]);
+// printObjetc({ name: 'Ironman', power: 6, age: 45 });
 
 
-// console.log(genericFunction('Hola Mundo!').toFixed(2)); // Esto causará un error porque toFixed no es un método de string);
-console.log(genericFunctionArrow(3.1416).toFixed(2));
+// // console.log(genericFunction('Hola Mundo!').toFixed(2)); // Esto causará un error porque toFixed no es un método de string);
+// console.log(genericFunctionArrow(3.1416).toFixed(2));
 
-const fernando = 'Fernando';
+// const fernando = 'Fernando';
 
-console.log(genericFunctionArrow(fernando).toUpperCase()); // Esto funcionará porque toUpperCase es un método de string
+// console.log(genericFunctionArrow(fernando).toUpperCase()); // Esto funcionará porque toUpperCase es un método de string
 
-console.log(genericFunctionArrow(new Date()).getDate()); // Esto funcionará porque getDate es un método de Date
+// console.log(genericFunctionArrow(new Date()).getDate()); // Esto funcionará porque getDate es un método de Date
 
 
+//manejando genericos parte 2
+
+const deadpool = {
+    name: 'Deadpool',
+    realName: 'Wade Wilson',
+}
