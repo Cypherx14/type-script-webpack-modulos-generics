@@ -37,7 +37,13 @@ function CheckValidPokemonId(){
     }
 }
 
-
+//decorador de propiedad
+function readOnly (isWritable: boolean = true) {
+    //en este caso no se recibe descriptor, sino que se recibe el target y el propertyKey
+    return function (target: any, propertyKey: string) {
+        
+    }
+}
 
 
 @blockPrototype
