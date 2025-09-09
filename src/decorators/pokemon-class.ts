@@ -20,7 +20,7 @@ const blockPrototype = function (constructor: Function) {
 }
 
 
-//decorador para metodo, usanod factory decorator
+//decorador para metodo, usando factory decorator
 function CheckValidPokemonId(){
     return function ( target: any, propertyKey: string, descriptor: PropertyDescriptor) {
         
@@ -38,18 +38,36 @@ function CheckValidPokemonId(){
 }
 
 //decorador de propiedad
-function readOnly (isWritable: boolean = true) {
+function readOnly (isWritable: boolean = true):Function {
     //en este caso no se recibe descriptor, sino que se recibe el target y el propertyKey
     return function (target: any, propertyKey: string) {
         
+        const descriptor: PropertyDescriptor = {
+            get() {
+                console.log(this);
+                return 'Fernando';
+            }
+            ,
+            set(this, val) {
+                // console.log(this,val);
+                Object.defineProperty(this, propertyKey, {
+                    value: val,
+                    writable: !isWritable,
+                    enumerable: false
+                });
+                
+            },
+        }
+        return descriptor;
     }
 }
 
 
 @blockPrototype
-@printToConsoleConditional(true)
+@printToConsoleConditional(false)
 export class Pokemon {
 
+    @readOnly(true)
     public publicApi: string = 'https://pokeapi.co';
 
     constructor(
